@@ -1,7 +1,3 @@
-#
-# ReactiveJackson
-# CocoaPods podspec
-#
 
 Pod::Spec.new do |s|
     s.name         = 'ReactiveJackson'
@@ -25,7 +21,7 @@ Pod::Spec.new do |s|
     s.source_files = 'ReactiveJackson/Main/*.{m,h}'
 
     s.dependency 'libextobjc', '~> 0.2.5'
-    s.dependency 'BrynKit', '~> 1.3.0'
+    s.dependency 'BrynKit', '~> 1.3.1'
     s.dependency 'GCDThreadsafe', '~> 0.1.1'
     s.dependency 'GCDObjects', '~> 0.0.1'
     s.dependency 'ReactiveCocoa', '~> 1.9.6'
