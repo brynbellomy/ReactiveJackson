@@ -11,6 +11,10 @@
 
 @class RACFuture, RACCriticalSectionScheduler;
 
+typedef void(^RACFutureBlock)(RACFuture *future);
+
+
+
 @interface RACSignal (RACFuture)
 
 - (RACFuture *) futureFromSignal;

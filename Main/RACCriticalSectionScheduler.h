@@ -6,12 +6,13 @@
 //  Copyright (c) 2013 bryn austin bellomy. All rights reserved.
 //
 
-#import <ReactiveCocoa/RACTargetQueueScheduler.h>
+//#import <ReactiveCocoa/RACTargetQueueScheduler.h>
+#import <ReactiveCocoa/RACQueueScheduler.h>
+#import "RACFuture.h"
 #import "RACHelpers.h"
 
-@class RACFuture;
 
-@interface RACCriticalSectionScheduler : RACTargetQueueScheduler
+@interface RACCriticalSectionScheduler : RACQueueScheduler
 
 + (instancetype) schedulerWithName:(NSString *)name targetQueue:(dispatch_queue_t)targetQueue;
 - (instancetype)      initWithName:(NSString *)name targetQueue:(dispatch_queue_t)targetQueue;

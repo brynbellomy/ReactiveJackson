@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 
-xctool -workspace BrynKit -scheme BrynKit build test
+xctool -workspace ReactiveJackson -scheme ReactiveJackson build test

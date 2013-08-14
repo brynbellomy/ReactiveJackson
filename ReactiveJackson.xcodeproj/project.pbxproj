@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		38182A6CB1A94499A705EE28 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B61266427E714258B8C040B5 /* libPods.a */; };
+		C500E29017BAF87000ECC9AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C500E28E17BAF85300ECC9AB /* CoreGraphics.framework */; };
+		C500E29417BAF98F00ECC9AB /* RACFutureSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E29117BAF98F00ECC9AB /* RACFutureSpec.m */; };
+		C500E29517BAF98F00ECC9AB /* RACTransformableBindingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C500E29217BAF98F00ECC9AB /* RACTransformableBindingSpec.m */; };
 		C598E38C17BABD2D00D6C0C6 /* RACCriticalSectionScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = C598E38017BABD2D00D6C0C6 /* RACCriticalSectionScheduler.m */; };
 		C598E38D17BABD2D00D6C0C6 /* RACFuture.m in Sources */ = {isa = PBXBuildFile; fileRef = C598E38217BABD2D00D6C0C6 /* RACFuture.m */; };
 		C598E38E17BABD2D00D6C0C6 /* RACHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = C598E38417BABD2D00D6C0C6 /* RACHelpers.m */; };
@@ -20,7 +23,6 @@
 		C5DA5FC217A794CB00857044 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DA5FAF17A794CA00857044 /* Foundation.framework */; };
 		C5DA5FC517A794CB00857044 /* libReactiveJackson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DA5FAC17A794CA00857044 /* libReactiveJackson.a */; };
 		C5DA5FCB17A794CB00857044 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5DA5FC917A794CB00857044 /* InfoPlist.strings */; };
-		C5DA5FD817A7975900857044 /* ReactiveJacksonSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5FD717A7975900857044 /* ReactiveJacksonSpec.m */; };
 		CF75B9F66E6247C7AFBD4B70 /* libPods-ReactiveJacksonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9F761885954E34852DE56F /* libPods-ReactiveJacksonTests.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,12 @@
 		4B9F761885954E34852DE56F /* libPods-ReactiveJacksonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveJacksonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E66CE8091AE46B79DBE9779 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		B61266427E714258B8C040B5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C500E28E17BAF85300ECC9AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C500E29117BAF98F00ECC9AB /* RACFutureSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACFutureSpec.m; sourceTree = "<group>"; };
+		C500E29217BAF98F00ECC9AB /* RACTransformableBindingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACTransformableBindingSpec.m; sourceTree = "<group>"; };
+		C500E29317BAF98F00ECC9AB /* ReactiveJacksonTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ReactiveJacksonTests-Prefix.pch"; sourceTree = "<group>"; };
+		C500E29717BAFA1C00ECC9AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C500E29817BAFA1C00ECC9AB /* ReactiveJackson-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ReactiveJackson-Info.plist"; sourceTree = "<group>"; };
 		C598E37F17BABD2D00D6C0C6 /* RACCriticalSectionScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACCriticalSectionScheduler.h; sourceTree = "<group>"; };
 		C598E38017BABD2D00D6C0C6 /* RACCriticalSectionScheduler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACCriticalSectionScheduler.m; sourceTree = "<group>"; };
 		C598E38117BABD2D00D6C0C6 /* RACFuture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACFuture.h; sourceTree = "<group>"; };
@@ -70,7 +78,6 @@
 		C5DA5FC017A794CB00857044 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C5DA5FC817A794CB00857044 /* ReactiveJacksonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReactiveJacksonTests-Info.plist"; sourceTree = "<group>"; };
 		C5DA5FCA17A794CB00857044 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C5DA5FD717A7975900857044 /* ReactiveJacksonSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReactiveJacksonSpec.m; path = ReactiveJacksonTests/ReactiveJacksonSpec.m; sourceTree = SOURCE_ROOT; };
 		C9E0E06EAB4641E39DE0CFC3 /* Pods-ReactiveJacksonTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveJacksonTests.xcconfig"; path = "Pods/Pods-ReactiveJacksonTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -88,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C500E29017BAF87000ECC9AB /* CoreGraphics.framework in Frameworks */,
 				C5DA5FBF17A794CB00857044 /* SenTestingKit.framework in Frameworks */,
 				C5DA5FC117A794CB00857044 /* UIKit.framework in Frameworks */,
 				C5DA5FC217A794CB00857044 /* Foundation.framework in Frameworks */,
@@ -142,6 +150,7 @@
 		C5DA5FAE17A794CA00857044 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C500E28E17BAF85300ECC9AB /* CoreGraphics.framework */,
 				C5DA5FAF17A794CA00857044 /* Foundation.framework */,
 				C5DA5FBE17A794CB00857044 /* SenTestingKit.framework */,
 				C5DA5FC017A794CB00857044 /* UIKit.framework */,
@@ -163,6 +172,8 @@
 		C5DA5FB217A794CA00857044 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C500E29617BAFA1C00ECC9AB /* InfoPlist.strings */,
+				C500E29817BAFA1C00ECC9AB /* ReactiveJackson-Info.plist */,
 				C5DA5FB317A794CA00857044 /* ReactiveJackson-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -171,7 +182,8 @@
 		C5DA5FC617A794CB00857044 /* ReactiveJacksonTests */ = {
 			isa = PBXGroup;
 			children = (
-				C5DA5FD717A7975900857044 /* ReactiveJacksonSpec.m */,
+				C500E29117BAF98F00ECC9AB /* RACFutureSpec.m */,
+				C500E29217BAF98F00ECC9AB /* RACTransformableBindingSpec.m */,
 				C5DA5FC717A794CB00857044 /* Supporting Files */,
 			);
 			path = ReactiveJacksonTests;
@@ -180,6 +192,7 @@
 		C5DA5FC717A794CB00857044 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C500E29317BAF98F00ECC9AB /* ReactiveJacksonTests-Prefix.pch */,
 				C5DA5FC817A794CB00857044 /* ReactiveJacksonTests-Info.plist */,
 				C5DA5FC917A794CB00857044 /* InfoPlist.strings */,
 			);
@@ -361,7 +374,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5DA5FD817A7975900857044 /* ReactiveJacksonSpec.m in Sources */,
+				C500E29417BAF98F00ECC9AB /* RACFutureSpec.m in Sources */,
+				C500E29517BAF98F00ECC9AB /* RACTransformableBindingSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +390,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C500E29617BAFA1C00ECC9AB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C500E29717BAFA1C00ECC9AB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		C5DA5FC917A794CB00857044 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -475,7 +497,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ReactiveJackson/ReactiveJackson-Prefix.pch";
+				GCC_PREFIX_HEADER = "ReactiveJacksonTests/ReactiveJacksonTests-Prefix.pch";
 				INFOPLIST_FILE = "ReactiveJacksonTests/ReactiveJacksonTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
@@ -491,7 +513,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ReactiveJackson/ReactiveJackson-Prefix.pch";
+				GCC_PREFIX_HEADER = "ReactiveJacksonTests/ReactiveJacksonTests-Prefix.pch";
 				INFOPLIST_FILE = "ReactiveJacksonTests/ReactiveJacksonTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;

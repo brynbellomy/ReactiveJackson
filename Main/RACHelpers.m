@@ -9,7 +9,11 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <ReactiveCocoa/RACSignal+Private.h>
 #import <ReactiveCocoa/RACSubscriber.h>
-#import <ReactiveCocoa/RACSubscriber+Private.h>
+
+#if defined(REACTIVECOCOA_2_0_DEV)
+#   import <ReactiveCocoa/RACSubscriber+Private.h>
+#endif
+
 #import <libextobjc/EXTScope.h>
 #import <objc/runtime.h>
 
@@ -32,13 +36,13 @@
 
 
 
-//- (RACDisposable *)then:(void (^)(void))completedBlock
-//{
-//	yssert_notNull( completedBlock );
-//
-//	RACSubscriber *o = [RACSubscriber subscriberWithNext:nil error:nil completed:completedBlock];
-//	return [self subscribe:o];
-//}
+- (RACDisposable *)then:(void (^)(void))completedBlock
+{
+	yssert_notNull( completedBlock );
+
+	RACSubscriber *o = [RACSubscriber subscriberWithNext:nil error:nil completed:completedBlock];
+	return [self subscribe:o];
+}
 
 @end
 

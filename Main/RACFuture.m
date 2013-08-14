@@ -69,7 +69,7 @@
 + (instancetype) futureOnDefaultScheduler: (RACFutureBlock)block
 {
     return [self futureOnScheduler: [RACScheduler scheduler]
-                             block: [block copy]];
+                             block: block];
 }
 
 
@@ -77,7 +77,7 @@
 + (instancetype) futureOnScheduler: (RACScheduler *)scheduler
                              block: (RACFutureBlock)block
 {
-    __block RACFutureBlock futureBlock = [block copy];
+    __block RACFutureBlock futureBlock = block;
     __block RACFuture *future = [RACFuture future];
 
     [scheduler schedule:^{
@@ -92,7 +92,7 @@
 + (instancetype) futureOnMainThread:(RACFutureBlock)block
 {
     return [self futureOnScheduler: [RACScheduler mainThreadScheduler]
-                             block: [block copy]];
+                             block: block];
 }
 
 
@@ -117,7 +117,7 @@
 - (instancetype) then: (RACFutureBlock)block
 {
     __block RACFuture *future           = [[self class] future];
-    __block RACFutureBlock futureBlock  = [block copy];
+    __block RACFutureBlock futureBlock  = block;
 
     [self subscribeCompleted:^{
         yssert_notNull( futureBlock );
