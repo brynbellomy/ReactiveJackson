@@ -10,13 +10,25 @@
 #define COCOAPODS_POD_AVAILABLE_BrynKit
 #define COCOAPODS_VERSION_MAJOR_BrynKit 1
 #define COCOAPODS_VERSION_MINOR_BrynKit 3
-#define COCOAPODS_VERSION_PATCH_BrynKit 0
+#define COCOAPODS_VERSION_PATCH_BrynKit 1
+
+// BrynKit/CocoaLumberjack
+#define COCOAPODS_POD_AVAILABLE_BrynKit_CocoaLumberjack
+#define COCOAPODS_VERSION_MAJOR_BrynKit_CocoaLumberjack 1
+#define COCOAPODS_VERSION_MINOR_BrynKit_CocoaLumberjack 3
+#define COCOAPODS_VERSION_PATCH_BrynKit_CocoaLumberjack 1
 
 // BrynKit/Main
 #define COCOAPODS_POD_AVAILABLE_BrynKit_Main
 #define COCOAPODS_VERSION_MAJOR_BrynKit_Main 1
 #define COCOAPODS_VERSION_MINOR_BrynKit_Main 3
-#define COCOAPODS_VERSION_PATCH_BrynKit_Main 0
+#define COCOAPODS_VERSION_PATCH_BrynKit_Main 1
+
+// CocoaLumberjack
+#define COCOAPODS_POD_AVAILABLE_CocoaLumberjack
+#define COCOAPODS_VERSION_MAJOR_CocoaLumberjack 1
+#define COCOAPODS_VERSION_MINOR_CocoaLumberjack 6
+#define COCOAPODS_VERSION_PATCH_CocoaLumberjack 2
 
 // GCDObjects
 #define COCOAPODS_POD_AVAILABLE_GCDObjects

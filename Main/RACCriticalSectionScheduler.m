@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 bryn austin bellomy. All rights reserved.
 //
 
-#import <ReactiveCocoa/RACTargetQueueScheduler.h>
+
+//#import <ReactiveCocoa/RACTargetQueueScheduler.h>
+#import <ReactiveCocoa/RACQueueScheduler.h>
 #import <ReactiveCocoa/RACScheduler+Private.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <GCDThreadsafe/GCDThreadsafe.h>
@@ -20,7 +22,7 @@
 
 
 
-@interface RACTargetQueueScheduler ()
+@interface RACQueueScheduler ()
     @property (nonatomic, readonly) dispatch_queue_t queue;
 @end
 
@@ -37,9 +39,17 @@ static void currentSchedulerRelease(void *context)
 	CFBridgingRelease(context);
 }
 
+BKImplementUnsupportedInitializers( // designated initializer
+                                    RACCriticalSectionScheduler, initWithName:targetQueue:,
 
-BKImplementConvenienceInitializer(scheduler,WithName:, NSString *, name,
-                                         targetQueue:, dispatch_queue_t, targetQueue)
+                                   // unsupported initializers
+                                   init,
+                                   initWithName:(NSString *)name )
+
+
+
+BKImplementConvenienceInitializer( scheduler,WithName:, NSString *, name,
+                                          targetQueue:, dispatch_queue_t, targetQueue )
 
 
 
@@ -49,8 +59,9 @@ BKImplementConvenienceInitializer(scheduler,WithName:, NSString *, name,
     self = [super initWithName:name targetQueue:targetQueue];
     if (self)
     {
-        self.queueCritical = targetQueue;
-        GCDInitializeQueue( self.queueCritical );
+        dispatch_set_target_queue( self.queueCritical, targetQueue );
+//        self.queueCritical = targetQueue;
+//        GCDInitializeQueue( self.queueCritical );
     }
     return self;
 }
@@ -63,9 +74,13 @@ BKImplementConvenienceInitializer(scheduler,WithName:, NSString *, name,
     yssert_notNull( block );
     yssert_notNilAndIsClass( future, RACFuture );
 
-    dispatch_queue_set_specific( self.queue, (__bridge void *)RACSchedulerCurrentSchedulerKey, (void *)CFBridgingRetain( self ), currentSchedulerRelease );
+//    dispatch_queue_set_specific( self.queue, (__bridge void *)RACSchedulerCurrentSchedulerKey, (void *)CFBridgingRetain( self ), currentSchedulerRelease );
+//    block( future );
+//    dispatch_queue_set_specific( self.queue, (__bridge void *)RACSchedulerCurrentSchedulerKey, nil, currentSchedulerRelease );
+
+    dispatch_queue_set_specific( self.queue, RACSchedulerCurrentSchedulerKey, (void *)CFBridgingRetain( self ), currentSchedulerRelease );
     block( future );
-    dispatch_queue_set_specific( self.queue, (__bridge void *)RACSchedulerCurrentSchedulerKey, nil, currentSchedulerRelease );
+    dispatch_queue_set_specific( self.queue, RACSchedulerCurrentSchedulerKey, nil, currentSchedulerRelease );
 }
 
 
@@ -83,9 +98,7 @@ BKImplementConvenienceInitializer(scheduler,WithName:, NSString *, name,
     }
     else
     {
-        @weakify(self)
         dispatch_barrier_async(self.queueCritical, ^{
-            @strongify(self);
             [self performAsCurrentScheduler:block withFuture:subscribableFuture];
         });
     }
@@ -103,9 +116,7 @@ BKImplementConvenienceInitializer(scheduler,WithName:, NSString *, name,
     RACFuture *subscribableFuture = [RACFuture future];
     yssert_notNil(subscribableFuture);
 
-    @weakify(self);
     dispatch_after(when, self.queue, ^{
-        @strongify(self);
         [self performAsCurrentScheduler:block withFuture:subscribableFuture];
     });
 

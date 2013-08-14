@@ -6,21 +6,36 @@
 //  Copyright (c) 2013 bryn austin bellomy. All rights reserved.
 //
 
+//#import "Pods-environment.h"
+//
+//#if COCOAPODS_VERSION_MAJOR_ReactiveCocoa == 1 && COCOAPODS_VERSION_MINOR_ReactiveCocoa == 9 && COCOAPODS_VERSION_PATCH_ReactiveCocoa == 6
+//#   define REACTIVECOCOA_1_9_6
+//#else
+//#   define REACTIVECOCOA_2_0_DEV
+//#endif
+
+
+
 #import <ReactiveCocoa/ReactiveCocoa.h>
-#import <ReactiveCocoa/RACQueueScheduler.h>
+
+//
+// guess users have to manually define this for now
+//
+#if defined(REACTIVECOCOA_2_0_DEV)
+#   import <ReactiveCocoa/RACTargetQueueScheduler.h>
+#else
+#   import <ReactiveCocoa/RACQueueScheduler.h>
+#endif
+
 
 #define RACDefaultUnit RACUnit.defaultUnit
 #define RACSignalBox(x) [RACSignal return:(x)]
-
-@class RACFuture;
-
-typedef void(^RACFutureBlock)(RACFuture *future);
 
 
 @interface RACSignal (BrynKit)
 
 - (RACSignal *) onMainThreadScheduler;
-//- (RACDisposable *)then:(void (^)(void))completedBlock;
+- (RACDisposable *)then:(void (^)(void))completedBlock;
 
 @end
 
